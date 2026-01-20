@@ -1,8 +1,6 @@
 import json
 from pathlib import Path
-#from langchain_core.documents import Document
 from langchain_text_splitters import RecursiveCharacterTextSplitter
-#from langchain_ollama import OllamaEmbeddings
 from config import (VIDEO_TRANSCRIPT_DIR, CHUNKED_DIR, CHUNK_SIZE, CHUNK_OVERLAP)
 from utils.chunking_utils import load_transcript_documents, validate_loaded_documents, split_documents_into_chunks, documents_to_dicts, save_chunks_to_json
 from utils.log_utils import print_chunking_summary
