@@ -66,7 +66,6 @@ def retrieve_query(query: str = None):
     print_header("Starting retrieval from embedded DB...")
     
     if query:
-        print(f"Query: {query}")
         retrieve(query)
     else:
         # Use default query or prompt user

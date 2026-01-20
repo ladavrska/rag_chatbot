@@ -4,9 +4,12 @@ def execute_query(rag_chain, query: str):
     """Execute a single query and display results"""
     print_header("RAG QUERY EXECUTION")
     print(f"\nQuery: {query}\n")
+
+    # Add search_query prefix for nomic-embed-text model
+    prefixed_query = f"search_query: {query}"
     
     try:
-        response = rag_chain.invoke({"input": query})
+        response = rag_chain.invoke({"input": prefixed_query})
         print(f"Answer: {response['answer']}")
         
         # Optional: Show source documents
@@ -38,7 +41,9 @@ def run_interactive_mode(rag_chain):
                 continue
                 
             print(f"\n🔍 Searching for: {user_query}")
-            response = rag_chain.invoke({"input": user_query})
+	    # Add search_query prefix for nomic-embed-text model
+            prefixed_query = f"search_query: {user_query}"
+            response = rag_chain.invoke({"input": prefixed_query})
             print(f"\n💡 Answer: {response['answer']}\n")
             print("-" * 60)
             
