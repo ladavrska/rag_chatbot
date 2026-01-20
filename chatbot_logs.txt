@@ -1,3 +1,5 @@
+For comparison, I provide the answers before and after adding prefixes for the nomic-embed model.
+
 ----------------------------------------------
 Query: What are the production 'Do's' for RAG?
 ----------------------------------------------
